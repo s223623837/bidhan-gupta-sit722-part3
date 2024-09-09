@@ -1,1 +1,15 @@
-# Your Solution
+version: '3.8'
+services:
+  book_catalog:
+    build: ./book_catalog
+    ports:
+      - "3001:8000"  # Map host port 3001 to container port 8000
+    environment:
+      DATABASE_URL: "postgresql://project_part3_zhbp_user:ZRP6vvc3l22pjSrUUWXTgxwpTW6BrAAg@dpg-crfn9plsvqrc73abeku0-a.oregon-postgres.render.com/project_part3_zhbp"
+
+  inventory_management:
+    build: ./inventory_management
+    ports:
+      - "3002:8000"  # Map host port 3002 to container port 8000
+    environment:
+      DATABASE_URL: "postgresql://project_part3_zhbp_user:ZRP6vvc3l22pjSrUUWXTgxwpTW6BrAAg@dpg-crfn9plsvqrc73abeku0-a.oregon-postgres.render.com/project_part3_zhbp"
